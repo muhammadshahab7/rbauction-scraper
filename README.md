@@ -33,8 +33,9 @@ pip install requests beautifulsoup4
 ```bash
 git clone https://github.com/your-username/rbauction-scraper.git
 cd rbauction-scraper
-Update the urls list in scraper.py with the product page URLs you want to scrape.
 ```
+Update the urls list in scraper.py with the product page URLs you want to scrape.
+
 ## Run the script:
 
 ```bash
