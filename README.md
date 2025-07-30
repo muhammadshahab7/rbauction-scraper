@@ -1,60 +1,124 @@
-# Product Information Scraper for rbauction.com
 
-## Overview
-This project is a Python-based web scraper designed to extract product information (titles, descriptions, pricing, and image URLs) from `rbauction.com`. The scraper avoids using headless browsers like Selenium or Playwright, ensuring lightweight and efficient scraping.
+# 🛠️ Ritchie Bros Auction Scraper (RBAuction.com) 🚜
 
-## Features
-- **Data Extraction**:
-  - Product Title
-  - Product Description
-  - Pricing Data
-  - Image URLs
-- **Anti-blocking Measures**:
-  - Rotating User Agents
-  - Random Delays Between Requests
-- **Concurrency**:
-  - Multi-threading using `ThreadPoolExecutor` for faster performance.
-- **Error Handling**:
-  - Robust error handling for network and parsing issues.
+![Python](https://img.shields.io/badge/Python-3.8+-blue?logo=python)
+![Web Scraping](https://img.shields.io/badge/Web%20Scraping-BeautifulSoup%2C%20Selenium%2C%20Playwright-yellow)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-## Requirements
-- Python 3.7 or higher
-- Dependencies:
-  - `requests`
-  - `beautifulsoup4`
+## 📌 Overview
 
-Install the dependencies using:
-```bash
-pip install requests beautifulsoup4
+This project provides a **powerful and flexible scraper** for extracting product details from [Ritchie Bros Auction (rbauction.com)](https://www.rbauction.com), a global auction site for heavy equipment and trucks.  
+Built with three different scraping strategies to suit your needs:
+
+- 🥣 `BeautifulSoup` – Fast & lightweight (for static pages)
+- 🦾 `Selenium` – Reliable for JavaScript-rendered content
+
+---
+
+## 🚀 Features
+
+- ✅ Extract product **title**, **features**, and **images**
+- ✅ Smart image filtering (cdn / www-ironplanet based)
+- ✅ Works on dynamic & static content
+- ✅ Modular & customizable for batch scraping
+
+---
+
+## 📁 Project Structure
+
 ```
-## How to Use
-- **Clone the repository:**
+📦 rbauction_scraper/
+├── beautifulsoup_scraper.py      # Static scraper using requests + BeautifulSoup
+├── selenium_scraper.py           # Dynamic scraper using Selenium (headless Chrome)
+├── LICENSE                       # MIT Licencse File
+└── README.md                     # This file
+```
+
+---
+
+## ⚙️ Installation
+
+### 📦 Dependencies
 
 ```bash
-git clone https://github.com/your-username/rbauction-scraper.git
-cd rbauction-scraper
+pip install requests beautifulsoup4 selenium
 ```
-Update the urls list in scraper.py with the product page URLs you want to scrape.
 
-## Run the script:
+### ✅ ChromeDriver for Selenium
+
+Make sure you have the ChromeDriver that matches your Chrome version.  
+Download: https://chromedriver.chromium.org/downloads
+
+---
+
+## 💻 Usage
+
+### 1. 🔎 BeautifulSoup (Static Scraping)
 
 ```bash
-python scraper.py
+python beautifulsoup_scraper.py
 ```
-The script will print the scraped product information (title, description, price, and image URLs) to the console.
 
-Example Output
+> ⚠️ Use only if product content is visible in raw HTML source.
+
+---
+
+### 2. 🦿 Selenium (Dynamic Scraping)
+
+```bash
+python selenium_scraper.py
+```
+
+> Uses `headless Chrome` to render and extract content.  
+> Suitable for most cases where JS is required to load product details.
+
+---
+
+## 📸 Output Example
+
 ```json
 {
-    "title": "Boom Truck Example",
-    "description": "A powerful boom truck for heavy lifting.",
-    "price": "$25,000",
-    "images": [
-        "https://www.rbauction.com/images/product1.jpg",
-        "https://www.rbauction.com/images/product2.jpg"
-    ]
+  "url": "https://www.rbauction.com/xyz123",
+  "title": "2022 CAT 320 GC Track Excavator",
+  "feature": "Air Conditioner, Boom Check Valve, 24 in Triple Grouser Track Shoes",
+  "images": [
+    "https://cdn.ironpla.net/image1.jpg",
+    "https://www-ironplanet.com/image2.jpg"
+  ]
 }
 ```
-## Notes
-- **Blocking Prevention**: Ensure you don't make too many rapid requests to avoid being blocked by the site.
-- **Customization**: Update the parsing logic in scrape_product if the site's structure changes.
+
+---
+
+## 🎯 Domain Filtering Logic
+
+To avoid unrelated or low-resolution images, the scraper **only includes image URLs** that start with:
+
+- `https://www-ironplanet`
+- `https://cdn.ironpla.net`
+
+This ensures high-quality, relevant images only.
+
+---
+
+## 📘 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+## 🙋‍♂️ Author
+
+**Muhammad Shahab**  
+_Python developer & web scraping enthusiast._
+
+---
+
+## 🌐 Connect
+
+- 💼 [LinkedIn](https://www.linkedin.com/in/muhammad-shahab07/)
+- 🐙 [GitHub](https://github.com/muhammadshahab7)
+
+---
+
+> ⭐ If you found this project helpful, please give it a star!
