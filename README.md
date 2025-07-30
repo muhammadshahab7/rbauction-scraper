@@ -2,7 +2,7 @@
 # 🛠️ Ritchie Bros Auction Scraper (RBAuction.com) 🚜
 
 ![Python](https://img.shields.io/badge/Python-3.8+-blue?logo=python)
-![Web Scraping](https://img.shields.io/badge/Web%20Scraping-BeautifulSoup%2C%20Selenium%2C%20Playwright-yellow)
+![Web Scraping](https://img.shields.io/badge/Web%20Scraping-BeautifulSoup%2C%20Selenium-yellow)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
 ## 📌 Overview
@@ -63,6 +63,11 @@ python beautifulsoup_scraper.py
 
 ---
 
+## 📸 Screenshot
+<img width="1346" height="297" alt="Screenshot 2025-07-31 000114" src="https://github.com/user-attachments/assets/b9dd29cd-580a-4db0-b743-0084105b19ae" />
+
+---
+
 ### 2. 🦿 Selenium (Dynamic Scraping)
 
 ```bash
@@ -74,7 +79,11 @@ python selenium_scraper.py
 
 ---
 
-## 📸 Output Example
+## 📸 Screenshot
+<img width="1433" height="299" alt="Screenshot 2025-07-31 001812" src="https://github.com/user-attachments/assets/4f566334-f1cd-428c-8fb8-96fd595f4670" />
+
+---
+## 📸 Output Json Example
 
 ```json
 {
